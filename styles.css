@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Sekuya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+
+.container-fluid{
+  font-family: 'Roboto Mono', monospace;
+}
+
+#bubble-pic{
+    clip-path: circle();
+    width: 25rem;
+    margin: auto;
+    
+}
+
+.tud-card{
+  border-width: 0;
+}
+
+h2{
+  font-family: "Bitcount Prop Single", system-ui;
+}
+
+.carousel-item {
+  height: 700px; /* set whatever height you want */
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;      /* crop edges instead of stretching */
+  object-position: center;
+}
+
+
+#brand-logo{
+  width: 25%;
+}
+
+.page-title{
+    font-family: 'Sekuya', sans-serif;
+    font-size: 4rem;
+    z-index: 1;
+    color: #e6e6e6;
+}
+
+.page-subtitle{
+    font-size: 1rem;
+    font-family: 'Sekuya', sans-serif;
+    color: #d0d7de;
+    z-index: 1;
+}
+
+#landing-page{
+    height: 100vh;
+    margin-inline: -1%;
+    z-index: 1;
+}
+
+.navbar{
+    z-index: 1;
+}
+
+#landing-page-vid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #d0d7de;
+  transform: translateX(-50%);
+}
+
+/* Dot positioned in the vertical middle of each card */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center; /* vertically align content + dot */
+  gap: 1rem;
+}
+
+/* DOT FIX */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #5a189a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(43, 0, 71, 0.2);
+  z-index: 3;
+  top: 50%; /* <-- centre it */
+}
+
+
+/* Content card */
+.timeline-content {
+  width: 45%;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: white;
+  border: 1px solid #e6e6e6;
+}
+
+/* Left items */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+}
+
+/* Right items */
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+
+  /* Put everything in a single column */
+  .timeline-item {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+  }
+
+  /* Move the timeline line to the centre */
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* FORCE hide dots on mobile */
+  .timeline-dot {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Centre the card and make room for the line */
+  .timeline-content {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto !important;
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  /* The line visually passes THROUGH each card */
+  .timeline-content::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #d0d7de;
+    transform: translateX(-50%);
+    z-index: -1; /* sits behind the card so the card appears 'on' the line */
+  }
+
+  /* Optional: create a small notch effect inside the card */
+  .timeline-content::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 1.2rem;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid #0d6efd;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
