@@ -17,21 +17,54 @@
   border-width: 0;
 }
 
-h2{
-  font-family: "Bitcount Prop Single", system-ui;
+.carousel-image-wrapper {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
 }
 
-.carousel-item {
-  height: 700px; /* set whatever height you want */
-}
-
-.carousel-item img {
+/* Prevent stretching */
+.carousel-image-wrapper img {
   height: 100%;
   width: 100%;
-  object-fit: contain;      /* crop edges instead of stretching */
+  object-fit: cover; 
   object-position: center;
 }
 
+.vball img {
+  object-position: 50% 30%;
+}
+
+.photography img {
+  object-position: 50% 70%;
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0)
+  );
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.carousel-overlay h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.carousel-overlay p {
+  font-size: 0.95rem;
+  max-width: 500px;
+}
 
 #brand-logo{
   width: 25%;
