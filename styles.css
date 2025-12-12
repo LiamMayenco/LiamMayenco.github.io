@@ -6,6 +6,8 @@
   font-family: 'Roboto Mono', monospace;
 }
 
+
+
 #bubble-pic{
     clip-path: circle();
     width: 25rem;
@@ -66,10 +68,6 @@
   max-width: 500px;
 }
 
-#brand-logo{
-  width: 25%;
-}
-
 .page-title{
     font-family: 'Sekuya', sans-serif;
     font-size: 4rem;
@@ -91,11 +89,19 @@
 }
 
 .contact-btn {
-  z-index: 1;
+  z-index: 5;
+}
+
+.btn {
+  z-index: 2;
 }
 
 .navbar{
     z-index: 1;
+}
+
+.navbar-brand {
+  width: 2rem;
 }
 
 #landing-page-vid {
@@ -170,27 +176,35 @@
 
 @media (max-width: 768px) {
 
-  /* Put everything in a single column */
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.5rem;
+  }
+
   .timeline-item {
     display: flex;
     justify-content: center;
     margin: 3rem 0;
   }
 
-  /* Move the timeline line to the centre */
+  
   .timeline::before {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  /* FORCE hide dots on mobile */
+
   .timeline-dot {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
+    box-shadow: none;
   }
 
-  /* Centre the card and make room for the line */
+  
   .timeline-content {
     width: 100%;
     max-width: 90%;
@@ -199,7 +213,7 @@
     padding: 1.5rem;
   }
 
-  /* The line visually passes THROUGH each card */
+
   .timeline-content::before {
     content: "";
     position: absolute;
@@ -209,10 +223,9 @@
     width: 3px;
     background: #d0d7de;
     transform: translateX(-50%);
-    z-index: -1; /* sits behind the card so the card appears 'on' the line */
+    z-index: -1; 
   }
 
-  /* Optional: create a small notch effect inside the card */
   .timeline-content::after {
     content: "";
     position: absolute;
