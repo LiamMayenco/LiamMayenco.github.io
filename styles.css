@@ -113,14 +113,14 @@
   z-index: 0;
 }
 
-/* Timeline container */
+
 .timeline {
   position: relative;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
-/* Vertical line */
+
 .timeline::before {
   content: "";
   position: absolute;
@@ -132,15 +132,15 @@
   transform: translateX(-50%);
 }
 
-/* Dot positioned in the vertical middle of each card */
+
 .timeline-item {
   position: relative;
   display: flex;
-  align-items: center; /* vertically align content + dot */
+  align-items: center; 
   gap: 1rem;
 }
 
-/* DOT FIX */
+
 .timeline-dot {
   position: absolute;
   left: 50%;
@@ -151,11 +151,11 @@
   border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(43, 0, 71, 0.2);
   z-index: 3;
-  top: 50%; /* <-- centre it */
+  top: 50%; 
 }
 
 
-/* Content card */
+
 .timeline-content {
   width: 45%;
   padding: 1.5rem;
@@ -164,12 +164,12 @@
   border: 1px solid #e6e6e6;
 }
 
-/* Left items */
+
 .timeline-item:nth-child(odd) .timeline-content {
   margin-left: auto;
 }
 
-/* Right items */
+
 .timeline-item:nth-child(even) .timeline-content {
   margin-right: auto;
 }
